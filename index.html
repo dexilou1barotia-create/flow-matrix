@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>FLOW MATRIX</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head><body>
+<div id="bg"></div>
+<button id="back" class="btn" data-act="back">← Back</button>
+<section id="menu" class="screen active"><h1 class="logo">FLOW MATRIX</h1>
+<p class="tag">CONNECT THE COLORS. SOLVE THE MATRIX. MASTER THE FLOW.</p>
+<div class="stack"><button class="btn" data-act="play">PLAY GAME</button><button class="btn" data-act="go:levels">LEVEL SELECTION</button><button class="btn" id="endb" data-act="endm">ENDLESS FLOW</button><p id="endlock" class="legend"></p><button class="btn" data-act="go:dash">SCORE DASHBOARD</button><button class="btn" data-act="go:ach">ACHIEVEMENTS</button><button class="btn" data-act="go:how">HOW TO PLAY</button><button class="btn" data-act="go:set">SETTINGS</button></div><button id="devb" data-dev="open" title="Developer mode">⚙</button></section>
+<section id="levels" class="screen"><h2>LEVEL SELECTION</h2><div id="stats" class="stats"></div><div id="lvgrid"></div></section>
+<section id="game" class="screen"><div class="rules"><b>RULES:</b> 1) Drag from a dot to its matching dot. 2) Lines can’t cross or overlap. 3) <b>Fill EVERY cell</b>, not just the dots. 4) Beat the timer. 5) <b>Moves are limited</b>, so plan carefully! 6) Hard mode: 💣 bombs erase your lines. Tap a bomb to defuse it!</div><div class="bar"><span id="lvl">LEVEL 1</span><span id="timer" class="timer">00:00</span><span id="mv">Moves 0</span></div><p id="hud"></p>
+<div id="wrap"><canvas id="cv"></canvas></div><p id="note"></p>
+<div class="ctl"><button class="btn" data-act="undo">Undo</button><button class="btn" data-act="reset">Reset</button><button class="btn" id="hintb" data-act="hint">Hint</button><button class="btn" data-act="pause">Pause</button><button class="btn" id="nextb" data-act="next">Next Level</button></div></section>
+<section id="endm" class="screen endl"><h2>ENDLESS FLOW</h2><p class="tag">How far can you go?</p><p>Choose your difficulty:</p>
+<div class="stack"><button class="btn" data-act="estart:0">EASY</button><button class="btn" data-act="estart:1">MEDIUM</button><button class="btn" data-act="estart:2">HARD</button></div><div id="endrec" class="tbl"></div></section>
+<section id="dash" class="screen"><h2>SCORE DASHBOARD</h2><div id="dst" class="stats"></div><div class="flt" id="flt"></div><div id="dtb" class="tbl"></div></section>
+<section id="ach" class="screen"><h2>ACHIEVEMENTS</h2><div id="achl"></div></section>
+<section id="how" class="screen how"><h2>HOW TO PLAY</h2><div class="rules"><b>RULES:</b> 1) Drag from a dot to its matching dot. 2) Lines can’t cross or overlap. 3) <b>Fill EVERY cell</b>, not just the dots. 4) Beat the timer. 5) <b>Moves are limited</b>, so plan carefully! 6) Hard mode: 💣 bombs erase your lines. Tap a bomb to defuse it!</div>
+<svg viewBox="0 0 180 180" width="160" height="160" class="ex"><g fill="none" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"><path d="M30 30V150" stroke="#00f0ff"/><path d="M90 30V150" stroke="#ff2bd6"/><path d="M150 30V150" stroke="#ff8a00"/></g><g><circle cx="30" cy="30" r="14" fill="#00f0ff"/><circle cx="30" cy="150" r="14" fill="#00f0ff"/><circle cx="90" cy="30" r="14" fill="#ff2bd6"/><circle cx="90" cy="150" r="14" fill="#ff2bd6"/><circle cx="150" cy="30" r="14" fill="#ff8a00"/><circle cx="150" cy="150" r="14" fill="#ff8a00"/></g></svg>
+<h3>What is Flow Matrix?</h3><p>A color puzzle. Each color has two dots. Your job is to join them with a line.</p>
+<h3>How to draw</h3><p>Press a dot, then drag with your mouse or finger through cells that touch side by side. No diagonals. You can’t go through X cells.</p>
+<h3>When lines meet</h3><p>Lines can’t share a cell. If you drag over another color’s line, that line is cut and erased. Dragging back over your own line shortens it.</p>
+<h3>Clear or restart a line</h3><p>Press its dot again and redraw. Undo takes back your last move. Reset clears the board (it asks first).</p>
+<h3>Fill the whole board</h3><p>On every level in every mode, every usable cell must be covered. If all colors are joined but empty cells remain, you will see “Almost there!” and the level is not finished.</p>
+<h3>Timer</h3><p>Easy gives you 1 minute, Medium 2 minutes and Hard 3 minutes. It starts at your first drag. It stops when you pause, win or lose. Leaving the tab pauses the game.</p>
+<h3>Limited moves</h3><p>Every line you draw counts as one move, and so does a board reset. Undo does not give moves back. The counter at the top shows moves used and moves allowed. When it runs out, you lose. Plan before you draw!</p><h3>Bombs (Hard mode)</h3><p>In Hard mode a 💣 can appear on your lines. It has a 3-second countdown and a red danger zone. Tap the bomb to defuse it. If it explodes, it erases your lines inside the red zone and you must redraw them.</p><h3>Scoring and stars</h3><p>You earn points for finishing, for time left and for harder boards. Hints, extra moves and retries lower your points. 3 stars need fast, clean play. 1 star means you finished.</p>
+<h3>Win or lose</h3><p>You win when all colors are joined and the board is full. You lose when the timer hits 00:00, or when you run out of moves. Then you can try again.</p>
+<h3>Unlocking</h3><p>Finish a level to open the next one. Finish Easy to open Medium. Finish Medium to open Hard. Finish all 30 levels to unlock Endless Flow.</p>
+<h3>Endless Flow</h3><p>Puzzles never end and get harder each level. Endless uses the same timers (1, 2 or 3 minutes) and limited moves, and Hard Endless has bombs too. Win in a row to build a streak bonus. If the timer runs out, the run is over.</p>
+<p>Keys: Esc pause · R reset · U undo</p></section>
+<section id="set" class="screen"><h2>SETTINGS</h2><label class="row">Sound Effects<input type="checkbox" id="sfx"></label><label class="row">Background Music<input type="checkbox" id="music"></label><label class="row">Animations<input type="checkbox" id="anim"></label>
+<div class="stack"><button class="btn danger" data-act="wipe">RESET GAME PROGRESS</button></div></section>
+<section id="dev" class="screen"><h2>DEVELOPER MODE</h2><p class="legend">Nothing here is saved. Refresh the page to exit.</p>
+<h3 class="d0">Answer key · Main levels</h3><div class="flt"><select id="dlv" class="inp"></select><button class="btn" data-dev="show">SHOW ANSWER</button><button class="btn" data-dev="play">PLAY THIS LEVEL</button></div>
+<h3 class="d1">Answer key · Endless</h3><div class="flt"><select id="ded" class="inp"><option value="0">Easy</option><option value="1">Medium</option><option value="2">Hard</option></select><input id="den" class="inp" type="number" min="1" value="1" style="width:80px"><button class="btn" data-dev="eshow">SHOW ANSWER</button><button class="btn" data-dev="eplay">PLAY ENDLESS</button></div>
+<canvas id="dcv" width="320" height="320"></canvas><p id="dinfo" class="legend"></p>
+<h3 class="d2">Preview ending screens</h3><div class="flt"><button class="btn" data-dev="e0">Easy complete</button><button class="btn" data-dev="e1">Medium complete</button><button class="btn" data-dev="e2">Final victory + Endless unlock</button></div>
+<div class="stack"><button class="btn danger" data-dev="out">EXIT DEVELOPER MODE</button></div></section>
+<div id="ov"></div><div id="toast"></div>
+<script src="js/storage.js"></script><script src="js/sound.js"></script><script src="js/levels.js"></script><script src="js/game.js"></script><script src="js/app.js"></script><script src="js/dev.js"></script>
+</body></html>
